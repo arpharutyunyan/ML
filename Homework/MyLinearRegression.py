@@ -24,16 +24,16 @@ class MyLinearRegression():
             print(f"k = {k};    b = {b};    error = {cost_error}")
             # plt.plot(x, y_predicted)  
 
-class LinearRegression_with_sklearn():
 
-    def implementation(self, x, y):
+
+    def linearRegression_with_sklearn(self, x, y):
         # plt.plot(x, y, "bo")
 
         x = x.reshape(-1, 1)
         y = y.reshape(-1, 1)
 
         model = LinearRegression()
-        model.fit(x,y)
+        z = model.fit(x,y)
         # plt.plot(x, y)
 
         k = model.intercept_
@@ -52,8 +52,7 @@ if __name__ == "__main__":
     iteration = 3000
     learning_rate = 0.001
 
-    # lr = MyLinearRegression()
-    # lr.gradient_descent(x, y, iteration, learning_rate)
+    lr = MyLinearRegression()
+    lr.gradient_descent(x, y, iteration, learning_rate)
 
-    lr = LinearRegression_with_sklearn()
-    lr.implementation(x,y)
+    lr.linearRegression_with_sklearn(x,y)
